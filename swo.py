@@ -15,7 +15,7 @@ def home():
     return "Hello World"
 
 
-@app.route('/api', methods=['POST'])
+@app.route('/slack/events, methods=['POST'])
 def add_data():
     try:
         print(request.json)
