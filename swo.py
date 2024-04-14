@@ -22,9 +22,11 @@ slack_app = App(
                 signing_secret=os.environ['SIGNING_SECRET']
             )
 
-
+@app.route("/",methods=["GET"])
+def hello():
+    return "hello world"
 # Route for handling slash command requests
-@app.route("/slack/command", methods=["POST"])
+@app.route("/slack/events", methods=["POST"])
 def command():
     # Parse request body data
     data = request.form
